@@ -1,0 +1,39 @@
+<!-- 
+* Trabalhando com Flexbox:
+- Ao utilizarmos flexbox, devemos analisar a estrutura do html e identificar o elemento pai dos elementos que queremos alinhar. Ex:
+ -->
+
+ <style>
+     .panel-cards {
+         display: flex; /* informa o uso de flex */
+         align-items: center; /* alinha elementos verticamente ao centro */
+         justify-content: space-between; /* informa que o espaço em branco do pai, e o coloca entre os elementos, ou seja, todo espaço em branco vai ficar entre um e outro. Pela lógica, para que o space betwen funcione corretamente, é necessário existir espaço em branco no elemento pai*/
+     }
+
+     .message {}
+
+     .content-cards {
+        display: flex;
+        background-color: red;
+     }
+
+     .card {
+        margin-left: 3px; /* Como o pai não tem espaço sobrando, foi necessário o margin left para garantir o espaço entre os elementos. Ps: aumentar um pouco o tamanho do pai resolveria para poer utilizar o space-between */
+     }
+
+ </style>
+<div id='panel-cards' class="panel-cards"> <!-- Recebe o flex -->
+    <div class='message'>
+        <b>Mensagem</b>
+    </div>
+    <div class="content-cards">
+        <div class='card'>1</div>
+        <div class='card'>2</div>
+        <div class='card'>3</div>
+        <div class='card'>4</div>
+    </div>
+</div>
+
+<!-- 
+* Atenção: Devemos trabalhar sempre com a lógica "quais elementos quero alinhar? Partindo desse ponto devemos identificar o pai e setar o mesmo como flex"
+ -->

@@ -1,0 +1,120 @@
+.cabecalhoPrincipal .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cabecalhoPrincipal-nav {
+  display: flex;
+}
+
+.rodapePrincipal-patrocinadores .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* Distribui o espaço em volda dos elementos, não entre os elementos PS: (entre -> **el** **el**) | (around -> ***el***el***el***) */
+}
+
+.rodapePrincipal-patrocinadores-list {
+  display: flex;
+  width: 75%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.rodapePrincipal-contatoForm {
+  width: 25%;
+}
+
+.rodapePrincipal-contatoForm-fieldset {
+  display: flex;
+}
+
+.rodapePrincipal-navMap-list {
+  display: flex;
+  flex-direction: column; /*Informa que o padrão de alinhamento é um elemento abaixo do outro, o padrão do flex é um ao lado do outro */
+  flex-wrap: wrap; /* A tendência quando temos uma altura definida, será de quebrar para o espaço ao lado e continuar em coluna. */
+  /* flex-flow: column wrap; Um atalho para informar a direção do flex juntamente com a regra e quebra 'wrap'*/
+  height: 250px; /*Definindo uma altura, para que os elementos não excedam o tamanho do pai.*/
+}
+
+.conteudoPrincipal-cursos {
+  display: flex;
+  flex-wrap: wrap; /* força quebrar para linha debaixo quando o tamanho da linha exceder o pai, se a direção fosse column, quebraria para linha ao lado. */
+  justify-content: safe;
+}
+
+.conteudoPrincipal-cursos-link {
+  width: 20%;
+}
+
+.videoSobre .container {
+  display: flex;
+}
+
+.videoSobre-sobre {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2; /* Faz com que o elemento cresça ocupando todo o tamanho não preenchodo do elemento pai 
+  (os valores é a quantidade de partes em que o espaço vai ser dividido, sendo essas partes distribuídas entre os growns dentro do mesmo contexto)*/
+}
+
+.videoSobre-sobre-list {
+  flex-grow: 1;
+}
+
+.videoSobre-video {
+  flex-grow: 1;
+  flex-shrink: 2; /* Informa que na versão responsiva, esse elemento será diminuído na proporção 2 vezes mais que os outros. */
+}
+
+/* Parte Mobile */
+@media (max-width: 768px) {
+  .cabecalhoPrincipal-nav {
+    flex-direction: column;
+  }
+
+  .cabecalhoPrincipal .container {
+    flex-direction: column;
+    align-items: initial;
+    text-align: center;
+  }
+
+  .conteudoPrincipal-cursos {
+    flex-direction: column;
+  }
+
+  .conteudoPrincipal-cursos-link {
+    width: 100%;
+  }
+
+  .rodapePrincipal-navMap-list {
+    height: auto; /* Calcula a autura automaticamente de acordo com o tamanho dos elementos filhos */
+  }
+
+  .rodapePrincipal-patrocinadores .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rodapePrincipal-contatoForm {
+    width: 100%;
+  }
+
+  .rodapePrincipal-patrocinadores-list {
+    margin: 0;
+    width: 100%;
+  }
+
+  .rodapePrincipal-contatoForm-fieldset {
+    justify-content: center;
+  }
+
+  .videoSobre .container {
+    flex-direction: column;
+  }
+
+  .videoSobre-video {
+    margin: 0 auto;
+  }
+}
